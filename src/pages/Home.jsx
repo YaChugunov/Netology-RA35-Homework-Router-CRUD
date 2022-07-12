@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import './pages/css/Home.css';
+import '../css/Home.css';
 
-import PostContext from './components/PostContext';
-import SinglePost from './components/SinglePost';
+import PostContext from '../components/PostContext';
+import SinglePost from '../components/SinglePost';
 
 export default function Home({ history }) {
   const { posts, loading } = useContext(PostContext);

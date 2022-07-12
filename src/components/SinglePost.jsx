@@ -1,8 +1,9 @@
 import React from 'react';
-import './Card.css';
 import moment from 'moment';
 
-export default function Card(props) {
+import '../SinglePost.css';
+
+export default function SinglePost(props) {
   const {
     data: { id, content, created },
     onClick,
