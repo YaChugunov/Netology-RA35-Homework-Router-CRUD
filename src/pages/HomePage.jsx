@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import PostsContext from '../../contexts/PostsContext';
 import { Link } from 'react-router-dom';
-import Card from '../../components/Card/Card';
-import './HomePage.css';
+import Card from '../../components/Card';
+import '../css/HomePage.css';
 
 export default function HomePage({ history }) {
   const { posts, loading } = useContext(PostsContext);
