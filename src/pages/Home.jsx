@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
-import PostsContext from '../../contexts/PostsContext';
 import { Link } from 'react-router-dom';
-import Card from '../../components/Card';
-import '../css/Home.css';
+
+import './pages/css/Home.css';
+
+import PostContext from './components/PostContext';
+import SinglePost from './components/SinglePost';
 
 export default function Home({ history }) {
-  const { posts, loading } = useContext(PostsContext);
+  const { posts, loading } = useContext(PostContext);
 
   return (
     <div className="home">
@@ -15,7 +17,7 @@ export default function Home({ history }) {
       <div className="body">
         {loading && <div>{'Loading...'}</div>}
         {posts.map((o) => (
-          <Card
+          <SinglePost
             data={o}
             key={o.id}
             onClick={() => history.push(`/posts/${o.id}`)}
