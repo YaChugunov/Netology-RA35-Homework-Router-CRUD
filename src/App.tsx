@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import { HomePage } from './pages/HomePage';
+import { Home } from './pages/Home';
 
 export default function App() {
   return (
