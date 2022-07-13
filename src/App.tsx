@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, NavLink, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Page404 from './pages/Page404';
+import PostNew from './components/PostNew';
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="/posts/new" element={<PostNew />} />
           <Route path="dashboard" element={<Dashboard />} />
 
           {/* Using path="*"" means "match anything", so this route
@@ -73,17 +74,6 @@ function Dashboard() {
   return (
     <div>
       <h2>Dashboard</h2>
-    </div>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
     </div>
   );
 }

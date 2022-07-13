@@ -1,11 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-// import Moment from 'react-moment';
-// import 'moment-timezone';
 
-// import '../SinglePost.css';
-
-export default function SinglePost(props) {
+export default function PostView(props) {
   const {
     data: { id, content, created },
     onClick,
