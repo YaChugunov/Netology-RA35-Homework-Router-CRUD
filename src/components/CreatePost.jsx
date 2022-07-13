@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import InputField from '../components/InputField';
 import '../css/PostNew.css';
 
-export default function PostNew(props) {
+export default function CreatePost(props) {
   const { fields, submitBtnText, onSubmit, onChange } = props;
 
   const handleChange = (name, value) => onChange(name, value);
@@ -23,12 +23,12 @@ export default function PostNew(props) {
   );
 }
 
-PostNew.defaultProps = {
+CreatePost.defaultProps = {
   fields: [],
   submitBtnText: 'Добавить',
 };
 
-PostNew.propTypes = {
+CreatePost.propTypes = {
   fields: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -37,6 +37,6 @@ PostNew.propTypes = {
     })
   ),
   submitBtnText: PropTypes.string,
-  // onSubmit: PropTypes.func.isRequired,
-  // onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

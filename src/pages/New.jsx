@@ -3,12 +3,12 @@ import PostContext from '../components/PostContext';
 import CreatePost from '../components/CreatePost';
 
 export default function New({ history }) {
-  const { handlePushA } = useContext(PostContext);
+  const { handlePush } = useContext(PostContext);
 
   const [value, setValue] = useState('');
 
-  const handleSubmitA = () => {
-    handlePushA({ content: value });
+  const handleSubmit = () => {
+    handlePush({ content: value });
     history.push('/');
   };
 
@@ -16,7 +16,7 @@ export default function New({ history }) {
     <CreatePost
       fields={[{ name: 'content', label: 'Создать пост:', value: value }]}
       onChange={(_, value) => setValue(value)}
-      onSubmit={handleSubmitA}
+      onSubmit={handleSubmit}
     />
   );
 }
