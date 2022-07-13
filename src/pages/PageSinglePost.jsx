@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
-import PostsContext from '../../contexts/PostsContext';
-import Card from './components/Post';
-import Page404 from './pages/404';
+import PostsContext from '../components/PostsContext';
+import Card from '../components/SinglePost';
+import Page404 from '../pages/404';
 
 export default function ViewPostPage({ match, history }) {
   const { posts, handleRemove } = useContext(PostsContext);
@@ -19,5 +19,7 @@ export default function ViewPostPage({ match, history }) {
     history.push('/');
   };
 
-  return (post && <Post data={post} onClose={handleClose} />) || <Page404 />;
+  return (
+    (post && <SinglePost data={post} onClose={handleClose} />) || <Page404 />
+  );
 }

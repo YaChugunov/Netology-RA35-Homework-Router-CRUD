@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import { Home } from './pages/Home';
-
 export default function App() {
   return (
     <div>
-      <h3>Нетология RA-38 / React Router / CRUD</h3>
+      <h1>Basic Example</h1>
 
       <p>
         This example demonstrates some of the core features of React Router
@@ -21,7 +19,7 @@ export default function App() {
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
 
@@ -43,7 +41,7 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Главная</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -63,6 +61,14 @@ function Layout() {
           so you can think about this <Outlet> as a placeholder for
           the child routes we defined above. */}
       <Outlet />
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
     </div>
   );
 }
