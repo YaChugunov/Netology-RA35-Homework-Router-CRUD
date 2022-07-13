@@ -2,7 +2,7 @@ import React from 'react';
 
 import AllPosts from '../components/AllPosts';
 
-export default function Home() {
+export default function Homepage() {
   return (
     <article className="article">
       <h1 className="article__title">Главная</h1>

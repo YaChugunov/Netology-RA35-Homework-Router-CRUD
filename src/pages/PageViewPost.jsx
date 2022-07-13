@@ -3,7 +3,7 @@ import PostsContext from '../components/PostsContext';
 import PostView from '../components/PostView';
 import Page404 from '../pages/Page404';
 
-export default function ViewPostPage({ match, history }) {
+export default function PageViewPost({ match, history }) {
   const { posts, handleRemove } = useContext(PostsContext);
   const { id } = match.params;
 

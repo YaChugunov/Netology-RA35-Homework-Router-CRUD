@@ -4,13 +4,13 @@ import InputField from '../components/InputField';
 import '../css/PostNew.css';
 
 export default function CreatePost(props) {
-  const { fields, submitBtnText, onSubmit, onChange } = props;
+  const { fields, submitBtnText, onSubmitNew, onChange } = props;
 
   const handleChange = (name, value) => onChange(name, value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit();
+    onSubmitNew();
   };
 
   return (

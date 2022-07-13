@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Routes, Route, Outlet, NavLink, Link } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Homepage from './pages/Homepage';
 import Page404 from './pages/Page404';
-import New from './pages/New';
+import PageNewPost from './pages/PageNewPost';
+import PostProvider from './components/PostProvider';
 
 export default function App() {
   return (
@@ -17,18 +18,20 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
 
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/posts/new" element={<New />} />
-          <Route path="/posts" element={<Home />} />
+      <PostProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Homepage />} />
+            <Route path="/posts/new" element={<PageNewPost />} />
+            <Route path="/posts" element={<Homepage />} />
 
-          {/* Using path="*"" means "match anything", so this route
+            {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
-          <Route path="*" element={<Page404 />} />
-        </Route>
-      </Routes>
+            <Route path="*" element={<Page404 />} />
+          </Route>
+        </Routes>
+      </PostProvider>
     </div>
   );
 }
@@ -58,22 +61,6 @@ function Layout() {
       <div className="page">
         <Outlet />
       </div>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
     </div>
   );
 }

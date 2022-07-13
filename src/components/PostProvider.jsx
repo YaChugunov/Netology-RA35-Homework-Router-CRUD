@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PostContext from '../components/PostContext';
 
-export default function PostsProvider(props) {
+export default function PostProvider(props) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
