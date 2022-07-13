@@ -3,7 +3,7 @@ import { Routes, Route, Outlet, NavLink, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Page404 from './pages/Page404';
-import PostNew from './components/PostNew';
+import New from './pages/New';
 
 export default function App() {
   return (
@@ -20,8 +20,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/posts/new" element={<PostNew />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/posts/new" element={<New />} />
+          <Route path="/posts" element={<Home />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

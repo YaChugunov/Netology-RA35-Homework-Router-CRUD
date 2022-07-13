@@ -1,22 +1,22 @@
 import React, { useState, useContext } from 'react';
 import PostContext from '../components/PostContext';
-import PostNew from '../components/PostNew';
+import CreatePost from '../components/CreatePost';
 
-export default function NewPostPage({ history }) {
-  const { handlePush } = useContext(PostContext);
+export default function New({ history }) {
+  const { handlePushA } = useContext(PostContext);
 
   const [value, setValue] = useState('');
 
-  const handleSubmit = () => {
-    handlePush({ content: value });
+  const handleSubmitA = () => {
+    handlePushA({ content: value });
     history.push('/');
   };
 
   return (
-    <PostNew
+    <CreatePost
       fields={[{ name: 'content', label: 'Создать пост:', value: value }]}
       onChange={(_, value) => setValue(value)}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitA}
     />
   );
 }

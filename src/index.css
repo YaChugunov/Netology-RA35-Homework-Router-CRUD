@@ -53,7 +53,7 @@ body {
   max-width: 1000px;
   margin: 3rem auto;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  background: #361f36;
+  border-color: #361f36;
 }
 
 .article {
