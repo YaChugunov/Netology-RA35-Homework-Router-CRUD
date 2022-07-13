@@ -1,5 +1,9 @@
 import React from 'react';
 
 export default function Page404() {
-  return <div>{'404: Страница не найдена'}</div>;
+  return (
+    <article className="article">
+      <h1 className="article__title">{'404: Страница не найдена'}</h1>
+    </article>
+  );
 }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Routes, Route, Outlet, NavLink, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Page404 from './pages/Page404';
 
 export default function App() {
   return (
@@ -23,7 +24,7 @@ export default function App() {
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
     </div>
