@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function InputField(props) {
   const { name, value, label, onChange } = props;
 
-  const handleChange = (evt) => onChange(name, evt.target.value);
+  const handleChange = (e) => onChange(name, e.target.value);
 
   return (
     <div className="input-field">

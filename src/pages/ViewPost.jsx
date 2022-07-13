@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import PostsContext from '../components/PostsContext';
-import Card from '../components/SinglePost';
-import Page404 from '../pages/404';
+import PostView from '../components/PostView';
+import Page404 from '../pages/Page404';
 
 export default function ViewPostPage({ match, history }) {
   const { posts, handleRemove } = useContext(PostsContext);
@@ -20,6 +20,6 @@ export default function ViewPostPage({ match, history }) {
   };
 
   return (
-    (post && <SinglePost data={post} onClose={handleClose} />) || <Page404 />
+    (post && <PostView data={post} onClose={handleClose} />) || <Page404 />
   );
 }

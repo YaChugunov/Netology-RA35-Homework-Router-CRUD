@@ -17,13 +17,13 @@ export default function PostsProvider(props) {
   useEffect(update, []);
 
   const handlePush = ({ id = 0, content }) => {
-    console.log({ id, content });
+    console.log({ id, created, content });
     fetch(process.env.REACT_APP_BACKEND_URL, {
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
       method: 'POST',
-      body: JSON.stringify({ id, content }),
+      body: JSON.stringify({ id, created, content }),
     }).then(update);
   };
 
