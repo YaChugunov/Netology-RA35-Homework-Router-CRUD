@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import PostsContext from '../components/PostContext';
-import AddForm from '../components/PostNew/PostNew';
+import PostContext from '../components/PostContext';
+import PostNew from '../components/PostNew';
 
 export default function NewPostPage({ history }) {
-  const { handlePush } = useContext(PostsContext);
+  const { handlePush } = useContext(PostContext);
 
   const [value, setValue] = useState('');
 
