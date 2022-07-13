@@ -1,29 +1,18 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-
-import '../css/Home.css';
-
-import PostContext from '../components/PostContext';
-import SinglePost from '../components/SinglePost';
-
-export default function Home({ history }) {
-  const { posts, loading } = useContext(PostContext);
-
+import React from 'react';
+export default function Home() {
   return (
-    <div className="home">
-      <button className="new-post-btn">
-        <Link to="/posts/new">{'Создать пост'}</Link>
-      </button>
-      <div className="body">
-        {loading && <div>{'Loading...'}</div>}
-        {posts.map((o) => (
-          <SinglePost
-            data={o}
-            key={o.id}
-            onClick={() => history.push(`/posts/${o.id}`)}
-          />
-        ))}
-      </div>
-    </div>
+    <article className="article">
+      <h1 className="article__title">Дрифт-такси</h1>
+      <p className="article__paragraph">
+        Только ​на Сочи Автодроме вас ждет уникальная возможность промчаться по
+        трассе Формулы 1 на максимально возможной скорости в управляемом заносе
+        на легендарной «королеве дрифта» Nissan Silvia!
+      </p>
+      <p className="article__paragraph">
+        Прокатитесь на дрифт-такси с вице-чемпионом Межконтинентального кубка по
+        дрифту под эгидой FIA 2017 года Аркадием Цареградцевым и испытайте на
+        себе, что значат скоростные постановки и эффектные заносы!
+      </p>
+    </article>
   );
 }

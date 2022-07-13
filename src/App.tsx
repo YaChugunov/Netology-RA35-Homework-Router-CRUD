@@ -1,18 +1,15 @@
 import * as React from 'react';
-import { Routes, Route, Outlet, Link } from 'react-router-dom';
+import { Routes, Route, Outlet, NavLink, Link } from 'react-router-dom';
+
+import Home from './pages/Home';
 
 export default function App() {
   return (
     <div>
-      <h1>Basic Example</h1>
-
-      <p>
-        This example demonstrates some of the core features of React Router
-        including nested <code>&lt;Route&gt;</code>s,{' '}
-        <code>&lt;Outlet&gt;</code>s, <code>&lt;Link&gt;</code>s, and using a
-        "*" route (aka "splat route") to render a "not found" page when someone
-        visits an unrecognized URL.
-      </p>
+      <div className="header">
+        <h1>Homework</h1>
+        <h3>React Router - CRUD</h3>
+      </div>
 
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
@@ -38,21 +35,16 @@ function Layout() {
     <div>
       {/* A "layout route" is a good place to put markup you want to
           share across all the pages on your site, like navigation. */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
+      <nav className="menu">
+        <NavLink className="menu__item" to="/">
+          Главная
+        </NavLink>
+        <NavLink className="menu__item" to="/posts/new">
+          Новый пост
+        </NavLink>
+        <NavLink className="menu__item" to="/posts">
+          Все посты
+        </NavLink>
       </nav>
 
       <hr />
@@ -61,14 +53,6 @@ function Layout() {
           so you can think about this <Outlet> as a placeholder for
           the child routes we defined above. */}
       <Outlet />
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
     </div>
   );
 }
