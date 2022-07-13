@@ -8,7 +8,8 @@ export default function New({ history }) {
   const [value, setValue] = useState('');
 
   const handleSubmit = () => {
-    handlePush({ content: value });
+    // handlePush({ content: value });
+    ({ content: value }) => handlePush;
     history.push('/');
   };
 
